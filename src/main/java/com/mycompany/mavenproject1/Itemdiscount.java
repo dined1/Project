@@ -16,8 +16,8 @@ public class Itemdiscount implements Serializable {
 
     @Column(name = "IDid", table = "itemdiscount", nullable = false)
     @Id
-    @FormParam("iDid")
-    private Integer iDid;
+    @FormParam("IDid")
+    private Integer IDid;
 
     @ManyToOne(targetEntity = Item.class)
     private Item item1;
@@ -26,11 +26,11 @@ public class Itemdiscount implements Serializable {
     private Discountrule discountrule1;
 
     public Integer getIDid() {
-        return this.iDid;
+        return this.IDid;
     }
 
-    public void setIDid(Integer iDid) {
-        this.iDid = iDid;
+    public void setIDid(Integer IDid) {
+        this.IDid = IDid;
     }
 
     public Item getItem1() {

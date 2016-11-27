@@ -37,8 +37,8 @@ public class So implements Serializable {
 
     @Column(name = "SONumber", table = "so")
     @Basic
-    @FormParam("sONumber")
-    private String sONumber;
+    @FormParam("SONumber")
+    private String SONumber;
 
     @Column(name = "PurchaseOrderNumber", table = "so")
     @Basic
@@ -95,11 +95,11 @@ public class So implements Serializable {
     }
 
     public String getSONumber() {
-        return this.sONumber;
+        return this.SONumber;
     }
 
-    public void setSONumber(String sONumber) {
-        this.sONumber = sONumber;
+    public void setSONumber(String SONumber) {
+        this.SONumber = SONumber;
     }
 
     public String getPurchaseOrderNumber() {

@@ -96,7 +96,7 @@ public class Group1Controller {
     @Path("list")
     @javax.mvc.annotation.Controller
     public String findAllGroup1() {
-        model.put("GROUP1_LIST", facade.findAll());
+        model.put("GROUP_1_LIST", facade.findAll());
         return "group1/list.jsp";
     }
     

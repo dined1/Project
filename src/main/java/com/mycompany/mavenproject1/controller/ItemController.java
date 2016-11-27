@@ -6,10 +6,22 @@
 package com.mycompany.mavenproject1.controller;
 
 import com.mycompany.mavenproject1.Item;
+import com.mycompany.mavenproject1.Itemgroup;
+import com.mycompany.mavenproject1.Itemdiscount;
+import com.mycompany.mavenproject1.Group1;
+import com.mycompany.mavenproject1.ProductItems;
+import com.mycompany.mavenproject1.Payment;
+import com.mycompany.mavenproject1.So;
 import com.mycompany.mavenproject1.Reg;
 import com.mycompany.mavenproject1.controller.util.ErrorBean;
 import com.mycompany.mavenproject1.controller.util.ValidationUtil;
 import com.mycompany.mavenproject1.service.facade.ItemFacade;
+import com.mycompany.mavenproject1.service.facade.ItemgroupFacade;
+import com.mycompany.mavenproject1.service.facade.ItemdiscountFacade;
+import com.mycompany.mavenproject1.service.facade.Group1Facade;
+import com.mycompany.mavenproject1.service.facade.ProductItemsFacade;
+import com.mycompany.mavenproject1.service.facade.PaymentFacade;
+import com.mycompany.mavenproject1.service.facade.SoFacade;
 import javax.inject.Inject;
 import javax.validation.Valid;
 import javax.validation.executable.ExecutableType;
@@ -32,6 +44,18 @@ public class ItemController {
     private javax.mvc.Models model;
     @Inject
     private ItemFacade facade;
+    @Inject
+    private ItemgroupFacade itemgroupFacade;
+    @Inject
+    private ItemdiscountFacade itemdiscountFacade;
+    @Inject
+    private Group1Facade groupFacade;
+    @Inject
+    private ProductItemsFacade productItemsFacade;
+    @Inject
+    private PaymentFacade paymentFacade;
+    @Inject
+    private SoFacade soFacade;
     @Inject
     private javax.mvc.binding.BindingResult validationResult;
     @Inject
@@ -78,14 +102,14 @@ public class ItemController {
         return "item/hello.jsp";
     }
 
-    @GET
+    /*@GET
     @Path("cat")
     @javax.mvc.annotation.Controller
     public String cat() {
         model.put("ITEM_LIST", facade.findAll());
         model.put("cat", "Pain");
         return "item/cat.jsp";
-    }
+    }*/
 
 
     @GET
@@ -129,8 +153,24 @@ public class ItemController {
     @Path("list")
     @javax.mvc.annotation.Controller
     public String findAllItem() {
+        model.put("GROUP_LIST", groupFacade.findAll());
+        return "item/main.jsp"; //Используется для просмотра главной страницы
+        //return "item/list.jsp"; //Для просмотра содежимого Item закомментить return "item/main.jsp" и раскомментить return "item/list.jsp"
+    }
+
+    @GET
+    @Path("group/{id}")
+    @javax.mvc.annotation.Controller
+    public String groupItem(@PathParam("id") Integer id) {
+        model.put("ID", id);
         model.put("ITEM_LIST", facade.findAll());
-        return "item/main.jsp";
+        model.put("ITEMGROUP_LIST", itemgroupFacade.findAll());
+        model.put("ITEMDISCOUNT_LIST", itemdiscountFacade.findAll());
+        model.put("GROUP_LIST", groupFacade.findAll());
+        model.put("PRODUCTITEMS_LIST", productItemsFacade.findAll());
+        model.put("PAYMENT_LIST", paymentFacade.findAll());
+        model.put("SO_LIST", soFacade.findAll());
+        return "item/group.jsp";
     }
     
 }

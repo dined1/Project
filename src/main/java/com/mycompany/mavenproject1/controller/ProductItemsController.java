@@ -96,7 +96,7 @@ public class ProductItemsController {
     @Path("list")
     @javax.mvc.annotation.Controller
     public String findAllProductItems() {
-        model.put("PRODUCTITEMS_LIST", facade.findAll());
+        model.put("PRODUCT_ITEMS_LIST", facade.findAll());
         return "productItems/list.jsp";
     }
     

@@ -27,69 +27,69 @@
                         <div class="dataTable_wrapper">
                             <table class="table table-striped table-bordered table-hover" id="PAYMENT_TABLE">
                                 <thead>
-                                    <tr>
-                                        <th>Payment Id</th>
-                                        <th>Payment Info</th>
-                                        <th>Paymentbill</th>
-                                        <th>Paymenttype</th>
-                                        <th>SO</th>
-                                        <th></th>
-                                    </tr>
+                                <tr>
+                                    <th>Payment Id</th>
+                                    <th>Payment Info</th>
+                                    <th>Paymentbill</th>
+                                    <th>Paymenttype</th>
+                                    <th>SO</th>
+                                    <th></th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    <c:forEach items="${PAYMENT_LIST}" var="PAYMENT">
-                                        <tr>
-                                            <td>${mvc.encoders.html(PAYMENT.paymentId)}</td>
+                                <c:forEach items="${PAYMENT_LIST}" var="PAYMENT">
+                                    <tr>
+                                        <td>${mvc.encoders.html(PAYMENT.paymentId)}</td>
 
-                                            <td>${mvc.encoders.html(PAYMENT.paymentInfo)}</td>
+                                        <td>${mvc.encoders.html(PAYMENT.paymentInfo)}</td>
 
-                                            <td>${mvc.encoders.html(PAYMENT.paymentbill1.cmp)}</td>
+                                        <td>${mvc.encoders.html(PAYMENT.paymentbill1.cmp)}</td>
 
-                                            <td>${mvc.encoders.html(PAYMENT.paymenttype1.typeName)}</td>
+                                        <td>${mvc.encoders.html(PAYMENT.paymenttype1.typeName)}</td>
 
-                                            <td>${mvc.encoders.html(PAYMENT.so1.sONumber)}</td>
+                                        <td>${mvc.encoders.html(PAYMENT.so1.SONumber)}</td>
 
-                                            <td>
-                                                <div class="pull-right">
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">
-                                                            <i class="fa fa-gear"></i>  <span class="caret"></span>
-                                                        </button>
-                                                        <ul class="dropdown-menu pull-right" role="menu">
-                                                            <li><a href="${PAYMENT.paymentId}"><i class="fa fa-level-up fa-fw"></i>  View</a></li>
-                                                            <li><a href="${appPath}/payment/update/${PAYMENT.paymentId}"><i class="fa fa-edit fa-fw"></i>  Edit</a></li>
-                                                            <li class="divider"></li>
-                                                            <li><a data-toggle="modal" data-target="#confirm_delete_${PAYMENT.paymentId}" href="#"  ><i class="fa fa-trash-o fa-fw"></i> Delete</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
+                                        <td>
+                                            <div class="pull-right">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">
+                                                        <i class="fa fa-gear"></i>  <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu pull-right" role="menu">
+                                                        <li><a href="${PAYMENT.paymentId}"><i class="fa fa-level-up fa-fw"></i>  View</a></li>
+                                                        <li><a href="${appPath}/payment/update/${PAYMENT.paymentId}"><i class="fa fa-edit fa-fw"></i>  Edit</a></li>
+                                                        <li class="divider"></li>
+                                                        <li><a data-toggle="modal" data-target="#confirm_delete_${PAYMENT.paymentId}" href="#"  ><i class="fa fa-trash-o fa-fw"></i> Delete</a>
+                                                        </li>
+                                                    </ul>
                                                 </div>
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="confirm_delete_${PAYMENT.paymentId}" tabindex="-1" role="dialog" aria-hidden="true">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                                <h4 class="modal-title">Confirmation</h4>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <p>Are you sure to delete Payment ?</p>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <form action="${appPath}/payment/remove/${PAYMENT.paymentId}" method="DELETE">
-                                                                    <a href="#" class="btn" data-dismiss="modal">Cancel</a> <button type="submit" class="btn btn-primary">Confirm</button>
-                                                                </form>
-                                                            </div>
+                                            </div>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="confirm_delete_${PAYMENT.paymentId}" tabindex="-1" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                            <h4 class="modal-title">Confirmation</h4>
                                                         </div>
-                                                        <!-- /.modal-content -->
+                                                        <div class="modal-body">
+                                                            <p>Are you sure to delete Payment ?</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <form action="${appPath}/payment/remove/${PAYMENT.paymentId}" method="DELETE">
+                                                                <a href="#" class="btn" data-dismiss="modal">Cancel</a> <button type="submit" class="btn btn-primary">Confirm</button>
+                                                            </form>
+                                                        </div>
                                                     </div>
-                                                    <!-- /.modal-dialog -->
+                                                    <!-- /.modal-content -->
                                                 </div>
-                                                <!-- /.modal -->
-                                            </td>
+                                                <!-- /.modal-dialog -->
+                                            </div>
+                                            <!-- /.modal -->
+                                        </td>
 
-                                        </tr>
-                                    </c:forEach>
+                                    </tr>
+                                </c:forEach>
                                 </tbody>
                             </table>
                         </div>

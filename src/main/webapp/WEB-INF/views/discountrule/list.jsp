@@ -27,63 +27,63 @@
                         <div class="dataTable_wrapper">
                             <table class="table table-striped table-bordered table-hover" id="DISCOUNTRULE_TABLE">
                                 <thead>
-                                    <tr>
-                                        <th>DRId</th>
-                                        <th>Discount Value</th>
-                                        <th>Discount Procent</th>
-                                        <th></th>
-                                    </tr>
+                                <tr>
+                                    <th>DRId</th>
+                                    <th>Discount Value</th>
+                                    <th>Discount Procent</th>
+                                    <th></th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    <c:forEach items="${DISCOUNTRULE_LIST}" var="DISCOUNTRULE">
-                                        <tr>
-                                            <td>${mvc.encoders.html(DISCOUNTRULE.DRId)}</td>
+                                <c:forEach items="${DISCOUNTRULE_LIST}" var="DISCOUNTRULE">
+                                    <tr>
+                                        <td>${mvc.encoders.html(DISCOUNTRULE.dRId)}</td>
 
-                                            <td>${mvc.encoders.html(DISCOUNTRULE.discountValue)}</td>
+                                        <td>${mvc.encoders.html(DISCOUNTRULE.discountValue)}</td>
 
-                                            <td>${mvc.encoders.html(DISCOUNTRULE.discountProcent)}</td>
+                                        <td>${mvc.encoders.html(DISCOUNTRULE.discountProcent)}</td>
 
-                                            <td>
-                                                <div class="pull-right">
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">
-                                                            <i class="fa fa-gear"></i>  <span class="caret"></span>
-                                                        </button>
-                                                        <ul class="dropdown-menu pull-right" role="menu">
-                                                            <li><a href="${DISCOUNTRULE.DRId}"><i class="fa fa-level-up fa-fw"></i>  View</a></li>
-                                                            <li><a href="${appPath}/discountrule/update/${DISCOUNTRULE.DRId}"><i class="fa fa-edit fa-fw"></i>  Edit</a></li>
-                                                            <li class="divider"></li>
-                                                            <li><a data-toggle="modal" data-target="#confirm_delete_${DISCOUNTRULE.DRId}" href="#"  ><i class="fa fa-trash-o fa-fw"></i> Delete</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
+                                        <td>
+                                            <div class="pull-right">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">
+                                                        <i class="fa fa-gear"></i>  <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu pull-right" role="menu">
+                                                        <li><a href="${DISCOUNTRULE.dRId}"><i class="fa fa-level-up fa-fw"></i>  View</a></li>
+                                                        <li><a href="${appPath}/discountrule/update/${DISCOUNTRULE.dRId}"><i class="fa fa-edit fa-fw"></i>  Edit</a></li>
+                                                        <li class="divider"></li>
+                                                        <li><a data-toggle="modal" data-target="#confirm_delete_${DISCOUNTRULE.dRId}" href="#"  ><i class="fa fa-trash-o fa-fw"></i> Delete</a>
+                                                        </li>
+                                                    </ul>
                                                 </div>
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="confirm_delete_${DISCOUNTRULE.DRId}" tabindex="-1" role="dialog" aria-hidden="true">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                                <h4 class="modal-title">Confirmation</h4>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <p>Are you sure to delete Discountrule ?</p>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <form action="${appPath}/discountrule/remove/${DISCOUNTRULE.DRId}" method="DELETE">
-                                                                    <a href="#" class="btn" data-dismiss="modal">Cancel</a> <button type="submit" class="btn btn-primary">Confirm</button>
-                                                                </form>
-                                                            </div>
+                                            </div>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="confirm_delete_${DISCOUNTRULE.dRId}" tabindex="-1" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                            <h4 class="modal-title">Confirmation</h4>
                                                         </div>
-                                                        <!-- /.modal-content -->
+                                                        <div class="modal-body">
+                                                            <p>Are you sure to delete Discountrule ?</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <form action="${appPath}/discountrule/remove/${DISCOUNTRULE.dRId}" method="DELETE">
+                                                                <a href="#" class="btn" data-dismiss="modal">Cancel</a> <button type="submit" class="btn btn-primary">Confirm</button>
+                                                            </form>
+                                                        </div>
                                                     </div>
-                                                    <!-- /.modal-dialog -->
+                                                    <!-- /.modal-content -->
                                                 </div>
-                                                <!-- /.modal -->
-                                            </td>
+                                                <!-- /.modal-dialog -->
+                                            </div>
+                                            <!-- /.modal -->
+                                        </td>
 
-                                        </tr>
-                                    </c:forEach>
+                                    </tr>
+                                </c:forEach>
                                 </tbody>
                             </table>
                         </div>

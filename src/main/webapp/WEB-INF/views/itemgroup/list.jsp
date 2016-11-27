@@ -29,6 +29,8 @@
                                 <thead>
                                     <tr>
                                         <th>IGId</th>
+                                        <th>Item</th>
+                                        <th>Group</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -36,6 +38,10 @@
                                     <c:forEach items="${ITEMGROUP_LIST}" var="ITEMGROUP">
                                         <tr>
                                             <td>${mvc.encoders.html(ITEMGROUP.iGId)}</td>
+
+                                            <td>${mvc.encoders.html(ITEMGROUP.item1.name)}</td>
+
+                                            <td>${mvc.encoders.html(ITEMGROUP.groups1.name)}</td>
 
                                             <td>
                                                 <div class="pull-right">

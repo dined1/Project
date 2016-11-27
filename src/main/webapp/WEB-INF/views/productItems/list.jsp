@@ -27,63 +27,63 @@
                         <div class="dataTable_wrapper">
                             <table class="table table-striped table-bordered table-hover" id="PRODUCT_ITEMS_TABLE">
                                 <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Item</th>
-                                        <th>SOProduct</th>
-                                        <th></th>
-                                    </tr>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Item</th>
+                                    <th>SOProduct</th>
+                                    <th></th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    <c:forEach items="${PRODUCT_ITEMS_LIST}" var="PRODUCT_ITEMS">
-                                        <tr>
-                                            <td>${mvc.encoders.html(PRODUCT_ITEMS_LIST.id)}</td>
-                                        <tr>
-                                            <td>${mvc.encoders.html(PRODUCT_ITEMS_LIST.item1.name)}</td>
-                                        <tr>
-                                            <td>${mvc.encoders.html(PRODUCT_ITEMS_LIST.soproduct1.mp)}</td>
+                                <c:forEach items="${PRODUCT_ITEMS_LIST}" var="PRODUCT_ITEMS">
+                                    <tr>
+                                        <td>${mvc.encoders.html(PRODUCT_ITEMS.id)}</td>
 
-                                            <td>
-                                                <div class="pull-right">
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">
-                                                            <i class="fa fa-gear"></i>  <span class="caret"></span>
-                                                        </button>
-                                                        <ul class="dropdown-menu pull-right" role="menu">
-                                                            <li><a href="${PRODUCT_ITEMS.id}"><i class="fa fa-level-up fa-fw"></i>  View</a></li>
-                                                            <li><a href="${appPath}/productItems/update/${PRODUCT_ITEMS.id}"><i class="fa fa-edit fa-fw"></i>  Edit</a></li>
-                                                            <li class="divider"></li>
-                                                            <li><a data-toggle="modal" data-target="#confirm_delete_${PRODUCT_ITEMS.id}" href="#"  ><i class="fa fa-trash-o fa-fw"></i> Delete</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
+                                        <td>${mvc.encoders.html(PRODUCT_ITEMS.item1.name)}</td>
+
+                                        <td>${mvc.encoders.html(PRODUCT_ITEMS.soproduct1.mp)}</td>
+
+                                        <td>
+                                            <div class="pull-right">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">
+                                                        <i class="fa fa-gear"></i>  <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu pull-right" role="menu">
+                                                        <li><a href="${PRODUCT_ITEMS.id}"><i class="fa fa-level-up fa-fw"></i>  View</a></li>
+                                                        <li><a href="${appPath}/productItems/update/${PRODUCT_ITEMS.id}"><i class="fa fa-edit fa-fw"></i>  Edit</a></li>
+                                                        <li class="divider"></li>
+                                                        <li><a data-toggle="modal" data-target="#confirm_delete_${PRODUCT_ITEMS.id}" href="#"  ><i class="fa fa-trash-o fa-fw"></i> Delete</a>
+                                                        </li>
+                                                    </ul>
                                                 </div>
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="confirm_delete_${PRODUCT_ITEMS.id}" tabindex="-1" role="dialog" aria-hidden="true">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                                <h4 class="modal-title">Confirmation</h4>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <p>Are you sure to delete Product Items ?</p>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <form action="${appPath}/productItems/remove/${PRODUCT_ITEMS.id}" method="DELETE">
-                                                                    <a href="#" class="btn" data-dismiss="modal">Cancel</a> <button type="submit" class="btn btn-primary">Confirm</button>
-                                                                </form>
-                                                            </div>
+                                            </div>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="confirm_delete_${PRODUCT_ITEMS.id}" tabindex="-1" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                            <h4 class="modal-title">Confirmation</h4>
                                                         </div>
-                                                        <!-- /.modal-content -->
+                                                        <div class="modal-body">
+                                                            <p>Are you sure to delete Product Items ?</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <form action="${appPath}/productItems/remove/${PRODUCT_ITEMS.id}" method="DELETE">
+                                                                <a href="#" class="btn" data-dismiss="modal">Cancel</a> <button type="submit" class="btn btn-primary">Confirm</button>
+                                                            </form>
+                                                        </div>
                                                     </div>
-                                                    <!-- /.modal-dialog -->
+                                                    <!-- /.modal-content -->
                                                 </div>
-                                                <!-- /.modal -->
-                                            </td>
+                                                <!-- /.modal-dialog -->
+                                            </div>
+                                            <!-- /.modal -->
+                                        </td>
 
-                                        </tr>
-                                    </c:forEach>
+                                    </tr>
+                                </c:forEach>
                                 </tbody>
                             </table>
                         </div>
