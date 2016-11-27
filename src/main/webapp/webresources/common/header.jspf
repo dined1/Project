@@ -12,7 +12,7 @@
 
         <title></title>
 
-        <c:set var="appPath" value="${mvc.contextPath}/resources"/>
+        <c:set var="appPath" value="${mvc.contextPath}"/>
         <c:set var="webPath" value="${mvc.contextPath}/webresources"/>
 
         <!-- Bootstrap Core CSS -->

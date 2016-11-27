@@ -5,17 +5,17 @@
  */
 package com.mycompany.mavenproject1.controller;
 
-import java.util.Set;
+import javax.mvc.engine.ViewEngine;
 import javax.ws.rs.core.Application;
 import java.util.HashMap;
 import java.util.Map;
-import javax.mvc.engine.ViewEngine;
+import java.util.Set;
 
 /**
  *
  * @author dzni0816
  */
-@javax.ws.rs.ApplicationPath("resources")
+@javax.ws.rs.ApplicationPath("")
 @javax.security.identitystore.annotation.EmbeddedIdentityStoreDefinition(
         @javax.security.identitystore.annotation.Credentials(callerName = "user", password = "user"))
 public class ApplicationConfig extends Application {
@@ -55,6 +55,7 @@ public class ApplicationConfig extends Application {
         resources.add(com.mycompany.mavenproject1.controller.UserController.class);
         resources.add(com.mycompany.mavenproject1.controller.UserRoleController.class);
         resources.add(com.mycompany.mavenproject1.controller.util.CustomParamConverterProvider.class);
+        resources.add(com.mycompany.mavenproject1.controller.AppController.class);
     }
     
 }
